@@ -1,6 +1,6 @@
 {
     "name": "drupal/recommended-project",
-    "description": "Project template for Drupal 8 projects with a relocated document root",
+    "description": "Project template for Drupal projects with a relocated document root",
     "type": "project",
     "license": "GPL-2.0-or-later",
     "homepage": "https://www.drupal.org/project/drupal",
@@ -15,18 +15,18 @@
         }
     ],
     "require": {
-        "composer/installers": "^1.2",
-        "cweagans/composer-patches": "^1.6",
-        "drupal/core-composer-scaffold": "^8.8",
-        "drupal/core-project-message": "^8.8",
-        "drupal/core-recommended": "^8.8",
-        "drupal/default_content": "^1.0@alpha",
-        "drupal/gatsby": "^1.0@beta",
-        "drupal/paragraphs": "^1.11"
+        "composer/installers": "^2.0",
+        "cweagans/composer-patches": "^1.7",
+        "drupal/core-composer-scaffold": "^10.0",
+        "drupal/core-project-message": "^10.0",
+        "drupal/core-recommended": "^10.0",
+        "drupal/default_content": "^2.0@alpha",
+        "drupal/next": "^1.6",
+        "drupal/paragraphs": "^1.15"
     },
     "require-dev": {
-        "drupal/core-dev": "^8.8",
-        "drush/drush": "^10.2"
+        "drupal/core-dev": "^10.0",
+        "drush/drush": "^11.5"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -34,6 +34,14 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "drupal/core-composer-scaffold": true,
+            "phpstan/extension-installer": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "cweagans/composer-patches": true,
+            "drupal/core-project-message": true
+        },
         "sort-packages": true
     },
     "extra": {
@@ -64,6 +72,9 @@
             "web/modules/custom/{$name}": [
                 "type:drupal-custom-module"
             ],
+            "web/profiles/custom/{$name}": [
+                "type:drupal-custom-profile"
+            ],
             "web/themes/custom/{$name}": [
                 "type:drupal-custom-theme"
             ]
@@ -80,7 +91,7 @@
                 "<bg=blue;fg=white>                                                         </>",
                 "",
                 "<bg=yellow;fg=black>Next steps</>:",
-                "  * Install the site: https://www.drupal.org/docs/8/install",
+                "  * Install the site: https://www.drupal.org/docs/installing-drupal",
                 "  * Read the user guide: https://www.drupal.org/docs/user_guide/en/index.html",
                 "  * Get support: https://www.drupal.org/support",
                 "  * Get involved with the Drupal community:",
@@ -91,8 +102,11 @@
         },
         "enable-patching": true,
         "patches": {
-            "drupal/gatsby": {
-                "Gatsby Preview URL": "patches/gatsby-preview_url.patch"
+            "drupal/subrequests": {
+                "Get same results on different request": "https://www.drupal.org/files/issues/2019-07-18/change_request_type-63049395-09.patch"
+            },
+            "drupal/decoupled_router": {
+                "Unable to resolve path on node in other language than default": "https://www.drupal.org/files/issues/2022-11-30/decouple_router-3111456-resolve-language-issue-58.patch"
             }
         }
     }

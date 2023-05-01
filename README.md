@@ -1,13 +1,18 @@
-# Decoupled Drupal 8 with GatsbyJS Frontend
+# Decoupled Drupal 8 with Next.js Frontend
 
-A decoupled setup with Drupal 8 CMS and Gatsby frontend.
+A decoupled setup with Drupal 10 CMS and Next frontend.
+
+TODO:
+
+- Develop Next components
+- Develop default content for the URL alias
 
 Features:
 
-- Drupal 8 installed with Umami demo profile
-- Gatsby frontend for Umami
-- Gatsby Preview (instant content updates in frontend, locally)
-- Example of using Paragraphs Drupal module with Gatsby
+- Drupal 10 installed with Umami demo profile
+- Next frontend for Umami
+- ?Gatsby Preview (instant content updates in frontend, locally)
+- Example of using Paragraphs Drupal module with Next
 - Custom Docksal commands to automate routine tasks
 
 ![drupal-gatsby-preview](https://user-images.githubusercontent.com/1205005/82586762-f3e65600-9b4c-11ea-9f42-9d131c6f4567.gif)
@@ -23,7 +28,7 @@ Features:
     cd drupal-gatsby
     ```
 
-If you fork/clone from here, then just run `fin init` inside the cloned repo folder. 
+If you fork/clone from here, then just run `fin init` inside the cloned repo folder.
 
 You will get a lit of URLs at the end of the init process:
 
@@ -61,7 +66,7 @@ These commands are stored in `.docksal/commands/` and can be used to automate an
 - Use `fin bash` to get a terminal with all developer tools pre-installed
   - **Use this instead of your local console**
   - You can run `composer`, `drush`, `npm`, etc. without the need to install those tools locally
-- Use `fin composer` inside the `cms` folder to manage Composer dependencies  
+- Use `fin composer` inside the `cms` folder to manage Composer dependencies
 - Use `fin drush` inside the `cms` folder manage Drupal CMS via Drush
 - Use `fin cms/uli` (`fin drush uli`) to get a one-time admin login link for Drupal CMS
 - Use `fin fe/logs` (`fin logs -f preview`) to watch preview (`gatsby develop`) logs

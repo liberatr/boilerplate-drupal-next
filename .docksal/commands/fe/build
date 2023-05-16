@@ -11,9 +11,9 @@ set -e
 
 cd ${PROJECT_ROOT}/frontend
 
-# Contents of both .cache and public have to be dropped
-# Cannot use 'gatsby clean' here as it tries to drop the entry folder and we cannot do this since .cache is a mounted as a volume
-rm -rf .cache/*
+# Contents of both .next and public have to be dropped
+# Cannot use 'gatsby clean' here as it tries to drop the entry folder and we cannot do this since .next is a mounted as a volume
+rm -rf .next/*
 rm -rf public/*
 
-time npm run build
+time yarn run dev

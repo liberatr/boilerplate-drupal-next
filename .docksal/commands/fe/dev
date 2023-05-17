@@ -16,4 +16,4 @@ cd ${PROJECT_ROOT}/frontend
 rm -rf .next/*
 rm -rf public/*
 
-time yarn run build
+time yarn run dev

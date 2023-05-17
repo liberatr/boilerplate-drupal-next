@@ -19,4 +19,4 @@ cd "$PROJECT_ROOT/frontend"
 # time npm ci
 # With node_modules being a volume, npm ci will fail with "EBUSY: resource busy or locked, rmdir '/var/www/frontend/node_modules'"
 # Stick with npm install the time being...
-time npm install
+time yarn install

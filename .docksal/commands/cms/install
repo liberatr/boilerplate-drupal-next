@@ -77,6 +77,7 @@ init_settings ()
 fix_permissions ()
 {
 	echo-green "Making site directory writable..."
+	mkdir -p "${SITEDIR_PATH}"
 	chmod 755 "${SITEDIR_PATH}"
 }
 
